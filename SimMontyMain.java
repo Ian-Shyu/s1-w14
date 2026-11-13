@@ -11,15 +11,19 @@ public class SimMontyMain {
     //implement this method
     public void runSimulation (int numGames) {
          SimMonty m = new SimMonty();
-         int countRuns = 0;
-         myWinTotal = 0;
-         //you write this...
-        //  while(){
-             
-        //  }
-         //stop here...
-         System.out.println((myWinTotal * 1.0)/numGames);
-    }
-    
-    
-}      
+        for (int i = 0; i < 3; i++){
+            int countRuns = 0;
+            int strategy = 0; 
+            strategy = i;
+            myWinTotal = 0;
+            //you write this...
+            while(countRuns < numGames){
+                m.playGame(strategy);
+                myWinTotal += m.playGame(strategy);
+                countRuns++;
+            }
+            System.out.println((myWinTotal * 1.0)/numGames);
+        }
+        
+    }      
+}
